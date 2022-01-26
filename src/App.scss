@@ -18,7 +18,15 @@ $color-white:#fff;
 .btN{
   @include btn()
 }
-
+.btn2{
+  @include btn();
+   padding: 10px 10px;
+}
+.selected{
+  border: none;
+  background: $bg-color;
+  color: $color-white;
+}
 .footer-icon{
   width: 42px;
   height: 42px;

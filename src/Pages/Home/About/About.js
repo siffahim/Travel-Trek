@@ -25,19 +25,19 @@ const About = () => {
                                 <ListItemText><i className="fas fa-check-circle icon"></i> Dolor sit amet consectetur,adipisicing elit.</ListItemText>
                             </List>
                             <Grid container sx={{ mb: 2 }}>
-                                <Grid xs={4}>
+                                <Grid item xs={4}>
                                     <Box>
                                         <Typography variant='h5' sx={{ fontWeight: 'bold', color: '#1ec38b' }}>45k+</Typography>
                                         <Typography variant='body1'>Year<br /> Experience</Typography>
                                     </Box>
                                 </Grid>
-                                <Grid xs={4}>
+                                <Grid item xs={4}>
                                     <Box>
                                         <Typography variant='h5' sx={{ fontWeight: 'bold', color: '#1ec38b' }}>355k+</Typography>
                                         <Typography variant='body1'>Destination<br /> Collaboration</Typography>
                                     </Box>
                                 </Grid>
-                                <Grid xs={4}>
+                                <Grid item xs={4}>
                                     <Box>
                                         <Typography variant='h5' sx={{ fontWeight: 'bold', color: '#1ec38b' }}>45k+</Typography>
                                         <Typography variant='body1'>Happy<br /> Customers</Typography>

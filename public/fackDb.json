@@ -1,0 +1,149 @@
+[
+    {
+        "name": "Africa",
+        "location": "Johannesburg, Africa",
+        "price": "545",
+        "trip": "three",
+        "img": "https://i.ibb.co/1rZxGjQ/Young-Hippie-girl-taking-a-walk-on-top-of-a-mountain-and-enjoying-the-day-rear-view.jpg"
+    },
+    {
+        "name": "Miami",
+        "location": "HillBest, Miami",
+        "price": "763",
+        "trip": "three",
+        "img": "https://i.ibb.co/mqL23rR/Hipster-girl-in-sweater-and-shorts-hiking-and-having-fun-in-the-mountains-on-a-sunny-day.jpg"
+    },
+    {
+        "name": "Nepal",
+        "location": "Katmundu, Nepal",
+        "price": "852",
+        "trip": "three",
+        "img": "https://i.ibb.co/17WNvTw/017.jpg"
+    },
+    {
+        "name": "America",
+        "location": "Digital Place, America",
+        "price": "753",
+        "trip": "three",
+        "img": "https://i.ibb.co/QQDcSxy/018.jpg"
+    },
+    {
+        "name": "USA",
+        "location": "Naicuku, USA",
+        "price": "999",
+        "trip": "three",
+        "img": "https://i.ibb.co/3rgxtNK/019.jpg"
+    },
+    {
+        "name": "Bankok",
+        "location": "Gociya, Bankok",
+        "price": "895",
+        "trip": "three",
+        "img": "https://i.ibb.co/3rgxtNK/019.jpg"
+    },
+    {
+        "name": "Singapur",
+        "location": "Kualalampur, Singapur",
+        "price": "358",
+        "trip": "three",
+        "img": "https://i.ibb.co/T0tCmJf/020.jpg"
+    },
+    {
+        "name": "Russia",
+        "location": "Depiya, Russia",
+        "price": "752",
+        "trip": "saven",
+        "img": "https://i.ibb.co/FKJMHFz/Side-view-shot-relaxed-young-woman-with-backpack-standing-by-the-stream-Female-hiking-by-the-creek.jpg"
+    },
+    {
+        "name": "Maldip",
+        "location": "Sea Dip, Maldip",
+        "price": "892",
+        "trip": "saven",
+        "img": "https://i.ibb.co/ZJch2FC/Woman-near-waterfal-on-Bali-Indonesia.jpg"
+    },
+    {
+        "name": "England",
+        "location": "London, England",
+        "price": "450",
+        "trip": "saven",
+        "img": "https://i.ibb.co/5cfLrXc/Woman-near-Nung-Nung-waterfal-on-Bali-Indonesia.jpg"
+    },
+    {
+        "name": "Vanish",
+        "location": "Italie, Vanish",
+        "price": "425",
+        "trip": "saven",
+        "img": "https://i.ibb.co/bWmw8hs/04.jpg"
+    },
+    {
+        "name": "Afganistan",
+        "location": "Hill Cliam, Afganistan",
+        "price": "852",
+        "trip": "saven",
+        "img": "https://i.ibb.co/3Ncnwv6/05.jpg"
+    },
+    {
+        "name": "Turkey",
+        "location": "Turkish, Turkey",
+        "price": "841",
+        "trip": "saven",
+        "img": "https://i.ibb.co/7nKtqSy/06.jpg"
+    },
+    {
+        "name": "Japan",
+        "location": "Janku, Japan",
+        "price": "854",
+        "trip": "saven",
+        "img": "https://i.ibb.co/6X45Hcf/07.jpg"
+    },
+    {
+        "name": "China",
+        "location": "Huku Hey, China",
+        "price": "442",
+        "trip": "five",
+        "img": "https://i.ibb.co/rpSc2D8/08.jpg"
+    },
+    {
+        "name": "Itali",
+        "location": "Towercity, Itali",
+        "price": "652",
+        "trip": "five",
+        "img": "https://i.ibb.co/j6Tyy8S/Kid-with-her-arms-out-enjoying-the-afternoon-sun.jpg"
+    },
+    {
+        "name": "Iran",
+        "location": "Tahran, Iran",
+        "price": "850",
+        "trip": "five",
+        "img": "https://i.ibb.co/BLZ1nsn/Little-girl-taking-photos-in-the-forest-The-girl-is-aged-10-and-is-wearing-backpack.jpg"
+    },
+    {
+        "name": "Romenia",
+        "location": "Menia, Romenia",
+        "price": "702",
+        "trip": "five",
+        "img": "https://i.ibb.co/CJxgsZ0/011.jpg"
+    },
+    {
+        "name": "Abu Dhabi",
+        "location": "Burj Khalifa, Abu Dhabi",
+        "price": "505",
+        "trip": "five",
+        "img": "https://i.ibb.co/GVCTTsn/012.jpg"
+    },
+    {
+        "name": "Hollywood",
+        "location": "Johannesburg, Hollywood",
+        "price": "450",
+        "trip": "five",
+        "img": "https://i.ibb.co/NSdNwC2/013.jpg"
+    },
+    {
+        "name": "India",
+        "location": "Kasmir, India",
+        "price": "645",
+        "trip": "five",
+        "img": "https://i.ibb.co/pPRd2pQ/014.jpg"
+    }
+]

@@ -1,4 +1,5 @@
 import React from 'react';
+import Services from '../../Services/Services';
 import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
 import About from '../About/About';
@@ -12,6 +13,7 @@ const Home = () => {
             <Navigation />
             <Banner />
             <Search />
+            <Services />
             <About />
             <Article />
             <Footer />
