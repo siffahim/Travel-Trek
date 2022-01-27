@@ -37,13 +37,15 @@ function Dashboard(props) {
             <List>
                 <Link className='lnk' to='/dashboard/makeblog'><i className="fas fa-pen-nib"></i> Post</Link>
             </List>
-            <List>
-                <Link className='lnk' to='/dashboard/blogs'><i className="fas fa-rss"></i> Blogs</Link>
-            </List>
             {
-                admin && <List>
-                    <Link className='lnk' to='/dashboard/admin'><i className="fas fa-user-shield"></i> Make Admin</Link>
-                </List>
+                admin && <Box>
+                    <List>
+                        <Link className='lnk' to='/dashboard/blogs'><i className="fas fa-rss"></i> Blogs</Link>
+                    </List>
+                    <List>
+                        <Link className='lnk' to='/dashboard/admin'><i className="fas fa-user-shield"></i> Make Admin</Link>
+                    </List>
+                </Box>
             }
             <List>
                 <Link className='lnk' to='/dashboard/review'><i className="fas fa-thumbs-up"></i> Review</Link><br />

@@ -1,5 +1,5 @@
 import { Avatar, Button, Card, CardContent, CardHeader, CardMedia, Grid, Typography } from '@mui/material';
-import { green, red } from '@mui/material/colors';
+import { red } from '@mui/material/colors';
 import { Box } from '@mui/system';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -89,7 +89,8 @@ const BlogsCard = ({ service, setNum }) => {
                         </Box>
                         <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
 
-                            <Button variant='contained' onClick={() => handleUpdate(_id)} sx={{ bgcolor: green[500] }} >Update</Button>
+                            {/* <Button variant='contained' onClick={() => handleUpdate(_id)} sx={{ bgcolor: green[500] }} >Update</Button> */}
+                            <Typography variant='h6'>{price}</Typography>
                             <Button variant='contained' onClick={() => handleDelete(_id)} sx={{ bgcolor: red[500] }} >Delete</Button>
                             <Button onClick={() => handlePandding(_id)} disabled={status} variant='contained' sx={{ bgcolor: '#1ec38b' }} >Approved</Button>
                         </Box>

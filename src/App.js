@@ -38,7 +38,7 @@ function App() {
             }>
               <Route path='/dashboard' element={<Blogs />} />
               <Route path='/dashboard/blogs' element={<Blogs />} />
-              <Route path='/dashboard/blogs/:ogIbld' element={<Update />} />
+              <Route path='/dashboard/blogs/:blogId' element={<Update />} />
               <Route path='/dashboard/makeblog' element={<MakePost />} />
               <Route path='/dashboard/admin' element={<MakeAdmin />} />
               <Route path='/dashboard/review' element={<Review />} />

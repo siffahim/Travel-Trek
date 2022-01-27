@@ -1,9 +1,11 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 const Update = () => {
+    const { blogId } = useParams();
     return (
         <div>
-            <h2>Update Blog</h2>
+            <h2>Update Blog: {blogId}</h2>
         </div>
     );
 };
