@@ -1,103 +1,85 @@
-import { Box, TextField, Typography } from '@mui/material';
-import React, { useState } from 'react';
+
+import { Button, Typography } from '@mui/material';
+import { Box } from '@mui/system';
+import React from 'react';
+import { ToastContainer } from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import useAuth from '../../../Hooks/useAuth';
+import logo from '../../../images/logo.png';
 
 const Register = () => {
-    const [loginData, setLoginData] = useState({});
-    const { register } = useAuth();
+    const { registerUser, user, error, googleLogin } = useAuth();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm()
     const location = useLocation();
-    const navigate = useNavigate()
-
-    const handleBlur = e => {
-        const name = e.target.name;
-        const value = e.target.value;
-
-        const newLoginData = { ...loginData };
-        newLoginData[name] = value;
-        setLoginData(newLoginData)
-    }
-    const handleSubmit = e => {
-        e.preventDefault();
-
+    const navigate = useNavigate();
+    const onSubmit = data => {
         //validate password with regex.
-        if (loginData.password?.length < 6) {
+        if (data.password?.length < 6) {
             toast.warn('Please password must be 6 charectar')
             return
         }
-        if (!/(?=.*[!@#$&*])/.test(loginData.password)) {
+        if (!/(?=.*[!@#$&*])/.test(data.password)) {
             toast.warn('Ensure string has one special case letter.')
             return
         }
-        if (!/(?=.*[0-9].*[0-9])/.test(loginData.password)) {
+        if (!/(?=.*[0-9].*[0-9])/.test(data.password)) {
             toast.warn(' Ensure string has two digits.')
             return
         }
-        if (!/(?=.*[a-z].*[a-z].*[a-z])/.test(loginData.password)) {
+        if (!/(?=.*[a-z].*[a-z].*[a-z])/.test(data.password)) {
             toast.warn('Ensure string has three lowercase letters.')
             return
         }
-        if (loginData.password !== loginData.password2) {
+        if (data.password !== data.password2) {
             toast.warn('Please give same password')
             return
         }
 
         //value send to useFirebase hooks
-        register(loginData.name, loginData.email, loginData.password, location, navigate)
+        registerUser(data.name, data.email, data.password, location, navigate)
     }
-
     return (
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', background: 'linear-gradient(135deg,#b3fde4, #b3fde4)' }}>
-            <Box sx={{ width: 300, bgcolor: 'white', borderRadius: '5px', boxShadow: 4, p: 2, textAlign: 'center' }}>
-                <Typography variant='h5'>Sign Up</Typography>
-                <form onSubmit={handleSubmit}>
-                    <Box>
-                        <TextField
-                            onBlur={handleBlur}
-                            name='name'
-                            label="Name"
-                            type="text"
-                            variant="standard"
-                        />
+        <>
+            <div className='row mx-auto p-3 mt-5 w-75'>
+                <div className='col-md-6 col-12 mx-auto shadow p-4'>
+                    <p className='text-center'>
+                        <img style={{ width: '180px' }} src={logo} alt="" />
+                    </p>
+                    <h4 className='text-center mb-4 text-muted'>Register</h4>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <input placeholder='Name' {...register("name", { required: true })} className="form-control mb-2" />
+                        {errors.name && <span className='text-danger'>This field is required</span>}
+
+                        <input placeholder='Email' {...register("email", { required: true })} className="form-control mb-2" />
+                        {errors.email && <span className='text-danger'>This field is required</span>}
+
+                        <input placeholder='Password' type='password' {...register("password", { required: true })} className="form-control mb-2" />
+                        {errors.password && <span className='text-danger'>This field is required</span>}
+
+                        <input placeholder='Confrim password' type='password'  {...register("password2", { required: true })} className="form-control mb-4" />
+                        {errors.password2 && <span className='text-danger'>This field is required</span>}
+
+                        <p>{error}</p>
+
+                        <Button variant='contained' sx={{ bgcolor: '#1ec38b', width: '100%' }} type="submit">Login</Button>
+                    </form>
+                    <Box sx={{ textAlign: 'center', my: 2 }}>
+                        <Typography>or Sign Up Using</Typography>
+                        <button onClick={() => googleLogin(location, navigate)}>Google</button>
                     </Box>
-                    <Box>
-                        <TextField
-                            onBlur={handleBlur}
-                            name='email'
-                            label="Email"
-                            type="email"
-                            variant="standard"
-                        />
-                    </Box>
-                    <Box>
-                        <TextField
-                            onBlur={handleBlur}
-                            name='password'
-                            label="Password"
-                            type="password"
-                            variant="standard"
-                        />
-                    </Box>
-                    <Box>
-                        <TextField
-                            onBlur={handleBlur}
-                            name='password2'
-                            label="Confirm password"
-                            type="password"
-                            variant="standard"
-                        />
-                    </Box>
-                    <button type='submit'>Sign Up</button>
-                </form>
-                <Typography>or Sign Up Using</Typography>
-                <button>Google</button>
-                <Typography>Alrady have an account? <Link to='/login'>Login</Link></Typography>
-            </Box>
-            <ToastContainer theme='colored' />
-        </Box>
+
+                    <Typography>Alrady have an account? <Link to='/login'>Login</Link></Typography>
+                    <ToastContainer theme='colored' />
+                </div>
+            </div>
+        </>
     );
 };
 
 export default Register;
+
+
+
+

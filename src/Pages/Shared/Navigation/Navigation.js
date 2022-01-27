@@ -17,6 +17,7 @@ const Navigation = () => {
             <Navbar.Collapse>
                 <Nav className="ms-auto text-center d-flex align-items-center">
                     <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                    <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>
                     {
                         user.email && <Box sx={{ display: 'flex', alignItems: 'center' }}>
                             <span style={{ color: '#1ec38b', fontWeight: 'bold' }}>{user.displayName}</span>

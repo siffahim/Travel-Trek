@@ -8,10 +8,11 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(true);
+    const [admin, setAdmin] = useState(false);
     const auth = getAuth();
 
     //user register
-    const register = (name, email, password, location, navigate) => {
+    const registerUser = (name, email, password, location, navigate) => {
         setIsLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
             .then(() => {
@@ -27,6 +28,8 @@ const useFirebase = () => {
                         setError(err.message)
                     })
 
+                //send data database
+                saveToDb(name, email)
 
                 //redirect path
                 const uri = location?.state?.from || '/';
@@ -39,7 +42,7 @@ const useFirebase = () => {
     }
 
     //user login
-    const login = (email, password, location, navigate) => {
+    const loginUser = (email, password, location, navigate) => {
         setIsLoading(true)
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
@@ -106,13 +109,38 @@ const useFirebase = () => {
         return unsubscribe;
     }, [])
 
+    //save to Db
+    const saveToDb = (name, email) => {
+        const user = {
+            name,
+            email
+        }
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(user)
+        })
+    }
+
+    //collect admin role
+    useEffect(() => {
+        fetch(`http://localhost:5000/users?email=${user.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setAdmin(data.admin)
+            })
+    }, [user.email])
+
     return {
         user,
         error,
-        login,
+        loginUser,
+        admin,
         logOut,
         isLoading,
-        register,
+        registerUser,
         googleLogin
     }
 }

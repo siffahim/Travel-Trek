@@ -1,65 +1,54 @@
-import { Box, TextField, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import { Box, Button, Typography } from '@mui/material';
+import React from 'react';
+import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
+import logo from '../../../images/logo.png';
 
 const Login = () => {
-    const { googleLogin, login } = useAuth();
-    const [loginData, setLoginData] = useState({});
-
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const { loginUser, user, error, googleLogin } = useAuth();
     const location = useLocation();
     const navigate = useNavigate();
 
-
-    const handleBlur = e => {
-        const name = e.target.name;
-        const value = e.target.value;
-
-        const newLogin = { ...loginData };
-        newLogin[name] = value;
-        setLoginData(newLogin)
-    }
-
-
-    const handleSubmit = e => {
-        e.preventDefault()
-
-        login(loginData.email, loginData.password, location, navigate)
-
-    }
+    const onSubmit = data => {
+        loginUser(data.email, data.password, location, navigate)
+        reset()
+    };
 
     return (
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh', background: 'linear-gradient(135deg,#b3fde4, #b3fde4)' }}>
-            <Box sx={{ width: 300, bgcolor: 'white', borderRadius: '5px', boxShadow: 4, p: 2, textAlign: 'center' }}>
-                <Typography variant='h5'>Login</Typography>
-                <form onSubmit={handleSubmit}>
-                    <Box>
-                        <TextField
-                            onBlur={handleBlur}
-                            name='email'
-                            label="Email"
-                            type="email"
-                            variant="standard"
-                        />
+        <>
+            <div className='row m-auto py-5 p-3 w-75'>
+                <div className='col-md-6 col-12 mx-auto shadow p-4'>
+                    <p className='text-center'>
+                        <img style={{ width: '180px' }} src={logo} alt="" />
+                    </p>
+                    <h4 className='text-center mb-5 text-muted'>Login</h4>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <input placeholder='Email' {...register("email", { required: true })} className="form-control mb-2" />
+                        {errors.email && <span className='text-danger'>This field is required</span>}
+
+                        <input placeholder='Password' type='password' {...register("password", { required: true })} className="form-control mb-4" />
+                        {errors.password && <span className='text-danger'>This field is required</span>}
+                        <p>{error}</p>
+
+                        <Button variant='contained' sx={{ bgcolor: '#1ec38b', width: '100%' }} type="submit">Login</Button>
+                    </form>
+                    <Box sx={{ textAlign: 'center', my: 2 }}>
+                        <Typography>or Sign Up Using</Typography>
+                        <button onClick={() => googleLogin(location, navigate)}>Google</button>
                     </Box>
-                    <Box>
-                        <TextField
-                            onBlur={handleBlur}
-                            name='password'
-                            label="Password"
-                            type="password"
-                            variant="standard"
-                        />
-                        <Typography variant='body1' sx={{ ml: 8 }}>Forgot password?</Typography>
-                    </Box>
-                    <button type='submit'>Login</button>
-                </form>
-                <Typography>or Sign Up Using</Typography>
-                <button onClick={() => googleLogin(location, navigate)}>Google</button>
-                <Typography>Creater new account? <Link to='/register'>Sing Up</Link></Typography>
-            </Box>
-        </Box>
+                    <Typography>Creater new account? <Link to='/register'>Sing Up</Link></Typography>
+                </div>
+            </div>
+        </>
     );
 };
 
 export default Login;
+
+
+
+/*  
+ <Typography variant='body1' sx={{ ml: 8 }}>Forgot password?</Typography>
+ */

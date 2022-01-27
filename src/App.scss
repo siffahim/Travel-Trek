@@ -85,6 +85,16 @@ $color-white:#fff;
   padding: 5px 5px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+.lnk{
+  color: white;
+}
+.lnk:hover{
+  color: #1ec38b;
+}
+.MuiDrawer-paper{
+  background: #333232 !important;
+  color: $color-white !important;
+}
 
 @media  only screen and (max-width:600px) {
   .banner{
