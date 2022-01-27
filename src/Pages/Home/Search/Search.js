@@ -1,4 +1,4 @@
-import { List, ListItemText, Typography } from '@mui/material';
+import { Button, List, ListItemText, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 
@@ -61,7 +61,7 @@ const Search = () => {
                             </select>
                         </Box>
                     </Box>
-                    <button className='btN' style={{ marginTop: '30px' }}>Search Now</button>
+                    <Button variant='contained' sx={{ bgcolor: '#1ec38b', padding: '10px', mt: 4 }}>Search Now</Button>
                 </Box>
             </Box>
         </Box>

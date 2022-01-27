@@ -1,5 +1,6 @@
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { useEffect, useState } from 'react';
+import swal from 'sweetalert';
 import initializationAuthentication from '../Pages/Login/Firebase/firebase.init';
 initializationAuthentication();
 
@@ -82,6 +83,11 @@ const useFirebase = () => {
     const logOut = () => {
         signOut(auth)
             .then(() => {
+                swal(
+                    "Opps!",
+                    "Successfully Logout!",
+                    "warning"
+                );
                 setError({})
             })
     }

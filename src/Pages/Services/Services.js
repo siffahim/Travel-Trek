@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import ServiceCard from './ServiceCard';
 
@@ -9,7 +9,6 @@ const Services = () => {
     const [page, setPage] = useState(0);
     const size = 8;
 
-    console.log(page)
     useEffect(() => {
         setLoad(true)
         fetch(`http://localhost:5000/services?size=${size}&&page=${page}`)
@@ -39,16 +38,19 @@ const Services = () => {
                         />)
                     }
                 </Grid>
+
+                {/* //pagination here */}
                 <Box sx={{ mt: 5, textAlign: 'center' }}>
                     {
-                        [...Array(pageCount).keys()].map(num => <button
+                        [...Array(pageCount).keys()].map(num => <Button
+                            variant='contained'
                             key={num}
                             className={num === page ? 'selected' : ''}
-                            style={{ border: 'none', padding: '4px 10px', fontWeight: 'bold', borderRadius: '3px', marginRight: '6px' }}
+                            sx={{ bgcolor: '#1ec38b', mx: 1 }}
                             onClick={() => setPage(num)}
                         >
                             {num + 1}
-                        </button>)
+                        </Button>)
                     }
                 </Box>
             </Container>

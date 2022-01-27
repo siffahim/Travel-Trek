@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -27,7 +27,7 @@ const Navigation = () => {
                         </Box>
                     }
                     {
-                        user.email ? <button onClick={logOut}>Logout</button> : <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                        user.email ? <Button sx={{ bgcolor: '#1ec38b', color: 'white' }} onClick={logOut}>Logout</Button> : <Nav.Link as={Link} to="/login">Login</Nav.Link>
                     }
                 </Nav>
             </Navbar.Collapse>

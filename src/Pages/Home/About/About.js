@@ -1,4 +1,4 @@
-import { Box, Container, Grid, List, ListItemText, Typography } from '@mui/material';
+import { Box, Button, Container, Grid, List, ListItemText, Typography } from '@mui/material';
 import React from 'react';
 import img from '../../../images/about3.jpg';
 
@@ -44,7 +44,7 @@ const About = () => {
                                     </Box>
                                 </Grid>
                             </Grid>
-                            <button className='btN'>Find Tours</button>
+                            <Button variant='contained' sx={{ bgcolor: '#1ec38b', padding: '10px' }}>Find Tours</Button>
                         </Box>
                     </Grid>
                 </Grid>
