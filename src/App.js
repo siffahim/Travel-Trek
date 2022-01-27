@@ -7,6 +7,7 @@ import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
 import MakePost from './Pages/Dashboard/MakePost/MakePost';
 import Review from './Pages/Dashboard/Review/Review';
+import Update from './Pages/Dashboard/Update/Update';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
@@ -37,6 +38,7 @@ function App() {
             }>
               <Route path='/dashboard' element={<Blogs />} />
               <Route path='/dashboard/blogs' element={<Blogs />} />
+              <Route path='/dashboard/blogs/:ogIbld' element={<Update />} />
               <Route path='/dashboard/makeblog' element={<MakePost />} />
               <Route path='/dashboard/admin' element={<MakeAdmin />} />
               <Route path='/dashboard/review' element={<Review />} />

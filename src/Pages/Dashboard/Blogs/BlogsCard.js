@@ -1,11 +1,17 @@
 import { Avatar, Button, Card, CardContent, CardHeader, CardMedia, Grid, Typography } from '@mui/material';
-import { red } from '@mui/material/colors';
+import { green, red } from '@mui/material/colors';
 import { Box } from '@mui/system';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 
 const BlogsCard = ({ service, setNum }) => {
     const { _id, name, img, location, price, status } = service;
+    const navigate = useNavigate();
+
+    const handleUpdate = id => {
+        navigate(`/dashboard/blogs/${id}`)
+    }
 
     const handleDelete = id => {
         swal({
@@ -16,7 +22,7 @@ const BlogsCard = ({ service, setNum }) => {
             dangerMode: true,
         }).then(isOkey => {
             if (isOkey) {
-                fetch(`http://localhost:5000/services/${id}`, {
+                fetch(`https://vast-lake-22687.herokuapp.com/services/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
@@ -31,7 +37,7 @@ const BlogsCard = ({ service, setNum }) => {
     }
 
     const handlePandding = id => {
-        fetch(`http://localhost:5000/services`, {
+        fetch(`https://vast-lake-22687.herokuapp.com/services`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -82,7 +88,8 @@ const BlogsCard = ({ service, setNum }) => {
                             </Typography>
                         </Box>
                         <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                            <Typography variant="h6" color="text.secondary">${price}</Typography>
+
+                            <Button variant='contained' onClick={() => handleUpdate(_id)} sx={{ bgcolor: green[500] }} >Update</Button>
                             <Button variant='contained' onClick={() => handleDelete(_id)} sx={{ bgcolor: red[500] }} >Delete</Button>
                             <Button onClick={() => handlePandding(_id)} disabled={status} variant='contained' sx={{ bgcolor: '#1ec38b' }} >Approved</Button>
                         </Box>

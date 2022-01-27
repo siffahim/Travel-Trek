@@ -45,7 +45,7 @@ const BookingModal = ({ openModal, handleBookingClose, service, date }) => {
             date: date.toLocaleDateString()
         }
         //send data server
-        fetch('http://localhost:5000/booking', {
+        fetch('https://vast-lake-22687.herokuapp.com/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

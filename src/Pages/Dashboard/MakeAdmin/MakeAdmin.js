@@ -11,7 +11,7 @@ const MakeAdmin = () => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        fetch('http://localhost:5000/users', {
+        fetch('https://vast-lake-22687.herokuapp.com/users', {
             method: 'PUT',
             headers: {
                 "content-type": 'application/json'

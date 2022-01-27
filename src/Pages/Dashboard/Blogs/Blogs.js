@@ -6,7 +6,7 @@ const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
     const [num, setNum] = useState(0);
     useEffect(() => {
-        fetch(`http://localhost:5000/services`)
+        fetch(`https://vast-lake-22687.herokuapp.com/services`)
             .then(res => res.json())
             .then(data => {
                 setBlogs(data.result)

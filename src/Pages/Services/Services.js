@@ -11,7 +11,7 @@ const Services = () => {
 
     useEffect(() => {
         setLoad(true)
-        fetch(`http://localhost:5000/services?size=${size}&&page=${page}`)
+        fetch(`https://vast-lake-22687.herokuapp.com/services?size=${size}&&page=${page}`)
             .then(res => res.json())
             .then(data => {
                 setServices(data.result)

@@ -115,7 +115,7 @@ const useFirebase = () => {
             name,
             email
         }
-        fetch('http://localhost:5000/users', {
+        fetch('https://vast-lake-22687.herokuapp.com/users', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"
@@ -126,7 +126,7 @@ const useFirebase = () => {
 
     //collect admin role
     useEffect(() => {
-        fetch(`http://localhost:5000/users?email=${user.email}`)
+        fetch(`https://vast-lake-22687.herokuapp.com/users?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setAdmin(data.admin)

@@ -52,7 +52,7 @@ const ServiceCard = ({ service, load }) => {
                         </Box>
                         <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                             <Typography variant="h6" color="text.secondary">${price}</Typography>
-                            <Button variant='contained' onClick={() => handleToggle(_id)} sx={{ bgcolor: '#1ec38b' }} >Booking</Button>
+                            <Button variant='contained' onClick={() => handleToggle(_id)} sx={{ bgcolor: '#1ec38b' }} >View Detail</Button>
                         </Box>
                     </CardContent>
                 </Card>
