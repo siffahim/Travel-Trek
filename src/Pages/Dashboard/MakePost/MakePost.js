@@ -47,7 +47,7 @@ const AddBlog = () => {
     return (
         <>
             <Container>
-                <div className='col-12 col-md-6'>
+                <div className='col-12 col-md-6 mx-auto'>
                     <form onSubmit={handleSubmit}>
                         <input type="text" onBlur={handleBlur} name='name' className='col-12 col-md-6 mb-3 d-block form-control' placeholder='Blog Name' required />
 

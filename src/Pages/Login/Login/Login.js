@@ -1,4 +1,5 @@
 import { Box, Button, Typography } from '@mui/material';
+import { red } from '@mui/material/colors';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -35,8 +36,8 @@ const Login = () => {
                         <Button variant='contained' sx={{ bgcolor: '#1ec38b', width: '100%' }} type="submit">Login</Button>
                     </form>
                     <Box sx={{ textAlign: 'center', my: 2 }}>
-                        <Typography>or Sign Up Using</Typography>
-                        <button onClick={() => googleLogin(location, navigate)}>Google</button>
+                        <Typography sx={{ mb: 1 }}>or sign up using</Typography>
+                        <Button variant='contained' sx={{ bgcolor: red[500] }} onClick={() => googleLogin(location, navigate)}>Google</Button>
                     </Box>
                     <Typography>Creater new account? <Link to='/register'>Sing Up</Link></Typography>
                 </div>

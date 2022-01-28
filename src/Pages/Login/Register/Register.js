@@ -1,5 +1,6 @@
 
 import { Button, Typography } from '@mui/material';
+import { red } from '@mui/material/colors';
 import { Box } from '@mui/system';
 import React from 'react';
 import { ToastContainer } from 'react-bootstrap';
@@ -66,8 +67,8 @@ const Register = () => {
                         <Button variant='contained' sx={{ bgcolor: '#1ec38b', width: '100%' }} type="submit">Login</Button>
                     </form>
                     <Box sx={{ textAlign: 'center', my: 2 }}>
-                        <Typography>or Sign Up Using</Typography>
-                        <button onClick={() => googleLogin(location, navigate)}>Google</button>
+                        <Typography sx={{ mb: 1 }}>or sign up using</Typography>
+                        <Button variant='contained' sx={{ bgcolor: red[500] }} onClick={() => googleLogin(location, navigate)}>Google</Button>
                     </Box>
 
                     <Typography>Alrady have an account? <Link to='/login'>Login</Link></Typography>

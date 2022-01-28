@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const ServiceCard = ({ service, load }) => {
-    const { img, location, price, _id } = service;
+    const { img, location, price, _id, name } = service;
     const navigate = useNavigate();
 
 
@@ -29,8 +29,8 @@ const ServiceCard = ({ service, load }) => {
                                 <i className="fas fa-map-marker-alt"></i>
                             </Avatar>
                         }
-                        title={location}
-                        subheader="September 14, 2022"
+                        title={name.slice(0, 25)}
+                        subheader={location}
                     />
                     <CardMedia
                         component="img"

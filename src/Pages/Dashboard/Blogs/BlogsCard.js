@@ -63,8 +63,8 @@ const BlogsCard = ({ service, setNum }) => {
                                 <i className="fas fa-map-marker-alt"></i>
                             </Avatar>
                         }
-                        title={location}
-                        subheader="September 14, 2022"
+                        title={name.slice(0, 25)}
+                        subheader={location}
                     />
                     <CardMedia
                         component="img"
@@ -90,7 +90,7 @@ const BlogsCard = ({ service, setNum }) => {
                         <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
 
                             {/* <Button variant='contained' onClick={() => handleUpdate(_id)} sx={{ bgcolor: green[500] }} >Update</Button> */}
-                            <Typography variant='h6'>{price}</Typography>
+                            <Typography variant="h6" color="text.secondary">${price}</Typography>
                             <Button variant='contained' onClick={() => handleDelete(_id)} sx={{ bgcolor: red[500] }} >Delete</Button>
                             <Button onClick={() => handlePandding(_id)} disabled={status} variant='contained' sx={{ bgcolor: '#1ec38b' }} >Approved</Button>
                         </Box>
